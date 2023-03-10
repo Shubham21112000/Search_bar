@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head> 
+
+<body>
+    <h1 class="text-center">MY FRIENDS LIST</h1>
+    <div class="container">
+        <hr>
+        <input type="text" id="myInput" onkeyup='tableSearch()' placeholder="Name">
+
+        <table class="table" id="myTable" data-filter-control="true" data-show-search-clear-button="true">
+            <tr>
+                <th>NAME</th>
+                <th>DEGREE</th>
+                <th>STREAM</th>
+            </tr>
+            <tr>
+                <td>Shubham kumar</td>
+                <td>B.Tech</td>
+                <td>CSBS</td>
+            </tr>
+            <tr>
+                <td>Vivek kumar</td>
+                <td>B.Sc</td>
+                <td>Maths</td>
+            </tr>
+            <tr>
+                <td>Niranjan kumar</td>
+                <td>B.Tech</td>
+                <td>CSBS</td>
+            </tr>
+            <tr>
+                <td>Akash</td>
+                <td>B.Tech</td>
+                <td>CSE</td>
+            </tr>
+            <tr>
+                <td>Sakcham Pratapp Singh</td>
+                <td>B.Tech</td>
+                <td>CSE</td>
+            </tr>
+            <tr>
+                <td>Shubham</td>
+                <td>B.Sc</td>
+                <td>Physic</td>
+            </tr>
+            <tr>
+                <td>Summy</td>
+                <td>B.Tech</td>
+                <td>CSE</td>
+            </tr>
+            <tr>
+                <td>Ankit</td>
+                <td>B.Tech</td>
+                <td>CSBS</td>
+            </tr>
+            <tr>
+                <td>Alok</td>
+                <td>B.Tech</td>
+                <td>CSE</td>
+            </tr>
+            <tr>
+                <td>Ranjan</td>
+                <td>B.Tech</td>
+                <td>CSBS</td>
+            </tr>
+        </table>
+    </div>
+
+    <script type="application/javascript">
+        function tableSearch() {
+            let input, filter, table, tr, td, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (let i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+
+        }
+    </script>
+</body>
+
+<footer></footer>
+
+</html>
